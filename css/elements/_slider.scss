@@ -1,4 +1,38 @@
 // TODO: Desarrollar el CSS para el slider
 .slider {
+	height: 30%;
+}
 
+.prev, .next {
+	position: absolute;
+	top: calc(50% - 20px);
+	font-size: 50px;
+	color: var(--white);
+}
+
+.pre:hover, .next:hover {
+	color: var(--orange);
+}
+
+.prev {
+	left: 0;
+	margin-left: 10px;
+}
+
+.next {
+	right: 0;
+	margin-right: 10px;
+}
+
+.slide > span {
+	background-color: var(--orange);
+	color: var(--white);
+	padding: 5px;
+}
+
+.slide > button {
+	background-color: var(--black);
+	color: var(--white);
+	border: 1px solid var(--white);
+	border-radius: 5px;
 }

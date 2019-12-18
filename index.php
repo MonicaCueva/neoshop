@@ -25,9 +25,15 @@ include "templates/header.php";
 <div class="wrapper">
     <div class="slider">
         <!-- TODO: Desarrollar el marcado para el slider -->
+
+		<!-- Flechas hacia delante y hacia atras-->
+		<a class="prev" onclick="prev()">&#10094;</a>
+		<a class="next" onclick="next()">&#10095;</a>
     </div><!-- .slider -->
     <div class="products">
         <!-- TODO: Desarrollar el marcado para los productos -->
+		<ul>
+		</ul>
     </div><!-- .products -->
     <div class="load">
         <!-- TODO: BONUS. Desarrollar la funcionalidad para que el botón cargue más productos -->
