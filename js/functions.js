@@ -41,6 +41,17 @@
 	 
 	 $('.products ul').append(contentProduct);
 	 
+	 //Modifico el orden de los productos 
+	 var i = 3;
+	 arrayProducts.forEach( function(product, index) {	 
+		var iOrder = index + 1;
+		if(i == 5 || i == 9) {
+			iOrder++;
+		}
+		$('.products > ul :nth-child('+ i + ')').css('order', ''+ iOrder +'');
+		i++;
+	 });
+	 
  }
  
  /**

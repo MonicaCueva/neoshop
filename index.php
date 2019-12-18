@@ -33,6 +33,8 @@ include "templates/header.php";
     <div class="products">
         <!-- TODO: Desarrollar el marcado para los productos -->
 		<ul>
+			<li id="cta1" class="cta"><img src="resources/cta/cta1.jpg"></li>
+			<li id="cta2" class="cta"><img src="resources/cta/cta2.jpg"></li>
 		</ul>
     </div><!-- .products -->
     <div class="load">
