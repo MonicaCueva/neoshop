@@ -11,20 +11,41 @@
  
  $(document).on('click', '.prev', function()
  {
+	 var slideWidth = $('.slider ul li').width();
+	 $('.slider ul').animate(
+	 {
+		left: + slideWidth,
+		speed: 'slow',
+		easing: 'linear'
+	 }, function()
+	 {
+		$('.slider ul li:last-child').prependTo('.slider ul');
+		$('.slider ul').css('left','');
+	 });
 
  });
  
  $(document).on('click', '.next', function()
  {
-	
+	var slideWidth = $('.slider ul li').width();
+	 $('.slider ul').animate(
+	 {
+		left: - slideWidth,
+		speed: 'slow',
+		easing: 'linear'
+	 }, function()
+	 {
+		$('.slider ul li:first-child').appendTo('.slider ul');
+		$('.slider ul').css('left','');
+	 });
  });
  
  /**
  * Carga la información de las imágenes del slider mediante Ajax
  */
- function loadSlider() 
+ async function loadSlider() 
  {
-	 var arraySlides = getData('api/slides.json');
+	 var arraySlides = await getData('api/slides.json');
 	 
 	 var contentSlide = '';
 	 arraySlides.forEach( function(slide) 
@@ -38,9 +59,9 @@
  /**
  * Carga los productos mediante Ajax
  */
- function loadProducts()
+ async function loadProducts()
  {
-	 var arrayProducts = getData('api/products.json');
+	 var arrayProducts = await getData('api/products.json');
 	 
 	 var contentProduct = '';
 	 arrayProducts.forEach( function(product) 
@@ -51,7 +72,7 @@
 	 
 	 $('.products ul').append(contentProduct);
 	 
-	 //Modifico el orden de los productos 
+	 //Modifica el orden de los productos 
 	 var i = 3;
 	 arrayProducts.forEach( function(product, index) {	 
 		var iOrder = index + 1;
@@ -67,19 +88,20 @@
  /**
  * Carga genérica de datos JSON
  */
- function getData(url)
+ async function getData(url)
  {
 	 var arrayData;
-	 $.ajax({
-		 url: url,
-		 dataType: 'json',
-		 async: false,
-		 success: function(json)
-		 {
-			arrayData = json.data;
-		 }
+	 var p = await Promise.resolve(
+		 $.ajax({
+			 url: url,
+			 dataType: 'json'
+		 })
+	 ).then(function(response) 
+	 {
+		 arrayData = response.data;
 	 });
 	 
-	 return arrayData;
+	return arrayData;
+
  }
  
