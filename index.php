@@ -24,18 +24,19 @@ include "templates/header.php";
 </header>
 <div class="wrapper">
     <div class="slider">
-        <!-- TODO: Desarrollar el marcado para el slider -->
-
+		<ul>	
+		</ul> 
 		<!-- Flechas hacia delante y hacia atras-->
-		<a class="prev" onclick="prev()">&#10094;</a>
-		<a class="next" onclick="next()">&#10095;</a>
+		<a class="prev">&#10094;</a>
+		<a class="next">&#10095;</a>
     </div><!-- .slider -->
     <div class="products">
-        <!-- TODO: Desarrollar el marcado para los productos -->
+		<h1>PRODUCTOS</h1>
 		<ul>
+			<!-- Banners-->
 			<li id="cta1" class="cta"><img src="resources/cta/cta1.jpg"></li>
 			<li id="cta2" class="cta"><img src="resources/cta/cta2.jpg"></li>
-		</ul>
+		</ul> 
     </div><!-- .products -->
     <div class="load">
         <!-- TODO: BONUS. Desarrollar la funcionalidad para que el botón cargue más productos -->

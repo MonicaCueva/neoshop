@@ -1,6 +1,26 @@
-// TODO: Desarrollar el CSS para el slider
+//CSS para el slider
+
 .slider {
-	height: 30%;
+	width: 100%;
+	height: 80vh;
+	
+	overflow: hidden;
+}
+
+.slider ul {
+    margin: 0px;
+    margin-top: -14vh;
+    padding: 0px;
+	display: flex;
+    width: 400%;
+	height: 80vh;
+	
+	animation: next 30s infinite alternate linear;
+}
+
+.slide {
+	width: 100%;
+	list-style: none;
 }
 
 .prev, .next {
@@ -10,8 +30,10 @@
 	color: var(--white);
 }
 
-.pre:hover, .next:hover {
+.prev:hover, .next:hover {
 	color: var(--orange);
+	cursor: pointer;
+
 }
 
 .prev {
@@ -24,15 +46,44 @@
 	margin-right: 10px;
 }
 
-.slide > span {
-	background-color: var(--orange);
-	color: var(--white);
-	padding: 5px;
-}
-
-.slide > button {
+.slide__span > button {
 	background-color: var(--black);
 	color: var(--white);
 	border: 1px solid var(--white);
 	border-radius: 5px;
+	
+	text-transform: uppercase;
+	padding: 5px;
+}
+
+.slide__span {
+	position: relative;
+	top: 200px;
+	left: 50%;
+}
+
+.slide__span h2 {
+	font-family: var(--titles-font);
+	color: var(--white);
+	background-color: var(--orange);
+	padding: 5px;	
+	
+	width: 450px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+@keyframes next {
+	0%   {margin-left: 0;}
+	20%  {margin-left: 0;}
+	
+	25%  {margin-left: -100%;}
+	45%  {margin-left: -100%;}
+	
+	50%  {margin-left: -200%;}
+	70%  {margin-left: -200%;}
+	
+	75%  {margin-left: -300%;}
+	100% {margin-left: -300%;}
 }

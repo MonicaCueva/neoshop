@@ -9,6 +9,16 @@
 	 
  });
  
+ $(document).on('click', '.prev', function()
+ {
+
+ });
+ 
+ $(document).on('click', '.next', function()
+ {
+	
+ });
+ 
  /**
  * Carga la información de las imágenes del slider mediante Ajax
  */
@@ -19,10 +29,10 @@
 	 var contentSlide = '';
 	 arraySlides.forEach( function(slide) 
 	 {
-		contentSlide += '<div class="slide"><span>'+ slide.title +'</span><button >'+ slide.button_text +'</button><img src="'+ slide.bg_image +'"></div>';
+		contentSlide += '<li class="slide"><span class="slide__span"><h2>'+ slide.title +'</h2><button >'+ slide.button_text +'</button></span><img src="'+ slide.bg_image +'"></li>';
 	 });
 	 
-	 $('.slider').append(contentSlide);
+	 $('.slider ul').append(contentSlide);
  }
  
  /**
@@ -72,3 +82,4 @@
 	 
 	 return arrayData;
  }
+ 

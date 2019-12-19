@@ -1,20 +1,28 @@
 // TODO: Desarrollar el CSS para los productos
+
+.products > h1 {
+	text-align: center;
+	font-family: var(--titles-font);
+}
+
 .products > ul {
 	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-left: 20%;
-	margin-right: 20%;
+    flex-wrap: wrap;
+    flex-direction: row;
+	justify-content: center;
+
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 0;
 }
 
 .product {
 	display: grid;
 	grid-template-columns: 30% 40% 30%;
 	grid-template-rows: 80% 10% 10%;
-	width: calc(30% - 20px);
-	height: calc(45vh - 20px);
-	margin: 20px auto;
+   
+    margin: 1em;
+    width: 15em;
 }
 
 .product__img {
@@ -50,6 +58,8 @@
 	color: var(--white);
 	border: 1px solid var(--white);
 	border-radius: 5px;
+	
+	text-transform: uppercase;
 }
 
 .load {
@@ -65,10 +75,10 @@
 }
 
 .cta {	
-    height: calc(45vh - 20px);
-	width: calc(60% - 0px);
+	height: 20em;
+    width: 32em;
     overflow: hidden;
-	margin: 20px auto;
+    margin: 1em;
 	
     display: flex;
     flex-wrap: wrap-reverse;
